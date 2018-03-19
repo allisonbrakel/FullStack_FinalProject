@@ -1,13 +1,6 @@
-<h2><%= product.album_name%></h2>
-<p>
-  <strong><%= product.artist_name%></strong>
-</p>
-<p>
-  <%= image_tag product.image_url %>
-</p>
-<p>
-  <strong><%= product.category.name%></strong>
-</p>
-<p>
-  <strong>$<%= product.price%></strong>
-</p>
+<div class="row">
+    <div class="col-sm-4">
+      <%= image_tag product.image_url %>
+      <p>Current Project</p>
+    </div>
+</div><br>
