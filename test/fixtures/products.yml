@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  album_name: MyString
+  artist_name: MyString
+  price: 1.5
+  image_url: MyString
+  category: one
+
+two:
+  album_name: MyString
+  artist_name: MyString
+  price: 1.5
+  image_url: MyString
+  category: two
