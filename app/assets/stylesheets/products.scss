@@ -4,8 +4,8 @@
 img {
   height: 50%;
   width: 50%;
-  border:1px solid #021a40;
 }
+
 
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
@@ -17,6 +17,8 @@ img {
 footer {
   background-color: #f2f2f2;
   padding: 25px;
+  clear: left;
+  clear: right;
 }
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */
