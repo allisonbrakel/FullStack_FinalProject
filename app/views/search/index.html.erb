@@ -1,25 +1,8 @@
+<div class="container">
 <h1>Search results</h1>
 <p>Search for "<%= @search_terms%>" returned <%= pluralize(@products.size, 'result') %></p>
-<ul>
-  <% @products.each do |product| %>
-    <div class="col-sm-4 left">
-      <%= image_tag product.image_url %>
-      <p>
-        <strong><%= product.album_name%></strong>
-      </p>
-      <p>
-        Artist: <%= product.artist_name%>
-      </p>
-      <p>
-        <%= product.category.name%>
-      </p>
-      <p>
-        $<%= product.price%>
-      </p>
-      <p>
-        <%= link_to 'View Details', products_path + "/#{product.id}" %>
-      </p>
-    </div>
-  <% end %>
-
-</ul>
+<%= render partial: 'products/product',
+           collection: @products,
+           locals: {show_details_link:true}
+%>
+</div>
