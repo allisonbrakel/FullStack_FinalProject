@@ -1,0 +1,5 @@
+<h1><%= @category.name%></h1>
+<%= render partial: 'products/product',
+           collection: @products,
+           locals: {show_details_link:true}
+%>

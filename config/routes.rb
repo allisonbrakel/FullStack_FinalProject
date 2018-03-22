@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'categories', to: 'category#index'
+
+  get 'categories/:id', to: 'category#show'
+
   get 'search', to: 'search#index'
 
   get 'products', to: 'products#index'
