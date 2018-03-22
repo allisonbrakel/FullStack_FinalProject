@@ -1,6 +1,9 @@
 <div class="container text-center">
   <h3>The Album Shop</h3><br>
-  <%= render @products %>
+  <%= render partial: 'product',
+                     collection: @products,
+                     locals: {show_details_link:true}
+  %>
   <%= paginate @products %>
 </div>
 

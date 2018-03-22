@@ -1,3 +1,6 @@
 <div class="container text-center image-center">
-  <%= render @product %>
+  <%= render partial: 'product',
+                     object: @product,
+                     locals: {show_details_link:false}
+  %>
 </div>

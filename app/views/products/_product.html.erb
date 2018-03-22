@@ -12,8 +12,10 @@
   <p>
     $<%= product.price%>
   </p>
-  <p>
-    <%= link_to 'View Details', products_path + "/#{product.id}" %>
-  </p>
+  <% if show_details_link %>
+    <p>
+      <%= link_to 'View Details', products_path + "/#{product.id}" %>
+    </p>
+  <% end %>
 </div>
 

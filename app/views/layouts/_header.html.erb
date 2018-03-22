@@ -13,6 +13,8 @@
         <li class="active"><%= link_to 'Home', products_path%></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
+        <li>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -20,3 +22,8 @@
     </div>
   </div>
 </nav>
+<%= form_tag(search_path, method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
