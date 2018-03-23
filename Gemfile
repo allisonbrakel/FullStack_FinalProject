@@ -8,6 +8,9 @@ end
 gem 'activeadmin'
 gem 'devise'
 
+gem 'carrierwave'
+gem 'mini_magick'
+
 gem 'bootstrap-sass'
 gem 'kaminari'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
