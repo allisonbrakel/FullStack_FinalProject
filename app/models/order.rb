@@ -6,4 +6,7 @@ class Order < ApplicationRecord
 
   accepts_nested_attributes_for :product_orders, allow_destroy: true
 
+  validates :total, :subtotal, :status, presence: true
+  validates :total, :subtotal, :gst, :pst, :hst, numericality: true
+
 end
