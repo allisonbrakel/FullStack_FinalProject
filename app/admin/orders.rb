@@ -12,7 +12,7 @@ ActiveAdmin.register Order do
 #   permitted
 # end
 #
-  permit_params :total, :subtotal, :gst, :pst, :hst, :user_id, :status,
+  permit_params :total, :subtotal, :gst, :pst, :hst, :customer_id, :status,
                 product_orders_attributes: [:id, :order_id, :product_id, :price, :quantity, :_destroy]
 
   form do |f|
@@ -20,11 +20,11 @@ ActiveAdmin.register Order do
 
     f.inputs "Order" do
       f.input :status
-      f.input :total
-      f.input :subtotal
-      f.input :gst
-      f.input :pst
-      f.input :hst
+      f.input :total, :as => :number
+      f.input :subtotal, :as => :number
+      f.input :gst, :as => :number
+      f.input :pst, :as => :number
+      f.input :hst, :as => :number
       f.input :customer
       f.has_many :product_orders, allow_destroy: true do |n_f|
         n_f.input :product
