@@ -19,7 +19,13 @@ ActiveAdmin.register Order do
     f.semantic_errors *f.object.errors.keys
 
     f.inputs "Order" do
+      f.input :status
       f.input :total
+      f.input :subtotal
+      f.input :gst
+      f.input :pst
+      f.input :hst
+      f.input :customer
       f.has_many :product_orders, allow_destroy: true do |n_f|
         n_f.input :product
       end
