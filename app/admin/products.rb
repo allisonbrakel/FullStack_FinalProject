@@ -13,6 +13,6 @@ ActiveAdmin.register Product do
 # end
 #
 
-  permit_params :album_name, :artist_name, :price, :image_url, :category_id
+  permit_params :name, :artist_name, :price, :image_url, :category_id
 
 end
