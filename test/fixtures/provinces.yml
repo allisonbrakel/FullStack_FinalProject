@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  province_code: MyString
+  gst: 1.5
+  pst: 1.5
+  hst: 1.5
+
+two:
+  province_code: MyString
+  gst: 1.5
+  pst: 1.5
+  hst: 1.5
