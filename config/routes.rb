@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get 'products', to: 'products#index'
   get 'products/:id', to: 'products#show'
 
+  post 'products/:id/add_to_cart', to: 'products#add_to_cart'
+
+
   root to: 'products#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config

@@ -17,5 +17,10 @@
       <%= link_to 'View Details', products_path + "/#{product.id}" %>
     </p>
   <% end %>
+  <p>
+    <%= link_to 'Add to Cart', products_path + "/#{product.id}/add_to_cart", method: :post %>
+  </p>
 </div>
+
+<%= debug session[:cart] %>
 
