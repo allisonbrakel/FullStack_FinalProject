@@ -12,6 +12,6 @@ ActiveAdmin.register Customer do
 #   permitted
 # end
 
-  permit_params :username, :password, :first_name, :last_name
+  permit_params :first_name, :last_name, :credit_card, :security_code
 
 end

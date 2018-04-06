@@ -11,13 +11,13 @@ class ProductsController < ApplicationController
   end
 
   def order
-    @street = params[:street]
+    load_cart
+    @security_code = params[@security_code]
     @province = if params[:province_id].blank?
                   Province.find(1)
                 else
                   Province.find(params[:province_id])
                 end
-
   end
 
   def add_to_cart
@@ -40,5 +40,14 @@ class ProductsController < ApplicationController
 
   def load_products_in_cart
     @products_in_cart = Product.find(session[:cart])
+  end
+
+  def load_cart
+    @fname = params[:fname]
+    @lname = params[:lname]
+    @city = params[:city]
+    @street = params[:street]
+    @pc = params[:pc]
+    @cc = params[:cc]
   end
 end

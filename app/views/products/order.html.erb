@@ -1,3 +1,29 @@
-<h2>Order</h2>
-<p><%= @province.province_code %></p>
-<p><%= @street %></p>
+<h2>Your Order</h2>
+
+<% @subtotal = 0 %>
+<% @products_in_cart.each do |i| %>
+ <p><%= i.name%> by <%= i.artist_name %> for <%= i.price %></p>
+  <% @subtotal += i.price %>
+<% end %>
+
+<strong>Subtotal: </strong><%= @subtotal.round(2) %>
+
+<% @gst = @subtotal * @province.gst %>
+<% @pst = @subtotal * @province.pst %>
+<% @hst = @subtotal * @province.hst %>
+
+<br>
+<strong>Gst: </strong><%= @gst.round(2) %>
+<strong>Pst: </strong><%= @pst.round(2) %>
+<strong>Hst: </strong><%= @hst.round(2) %>
+<% @total = @subtotal + @gst + @pst + @hst%>
+<br>
+<strong>Total: </strong><%= @total.round(2) %>
+<br>
+<%= form_tag('/cart/checkout/complete_order/', method: "get") do %>
+<%= submit_tag("Complete Order") %>
+<% end %>
+<%
+  @new_customer = Customer.create(first_name: @fname, last_name: @lname, credit_card: @cc, security_code: @security_code)
+  @new_customer.save()
+%>

@@ -17,7 +17,6 @@ Rails.application.routes.draw do
 
   get '/startsearch', to: 'search#search_page'
 
-  get '/cart/checkout/order', to: 'products#order'
 
 
   root to: 'products#index'

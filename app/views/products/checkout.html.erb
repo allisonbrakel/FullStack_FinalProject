@@ -1,29 +1,53 @@
-<h3>Customer Details:</h3>
 
-<h3>Address Details:</h3>
+<h3>Customer Details:</h3>
 <%= form_tag('/cart/checkout/order', method: "get") do %>
   <div class="form-group">
-    <%= label_tag(:street, "Street:") %>
+    <%= label_tag(:fname, "First Name:") %>
+    <div class="container">
+      <%= text_field_tag(:fname) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= label_tag(:lname, "Last Name:") %>
+    <div class="container">
+      <%= text_field_tag(:lname) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= label_tag(:street, "Address:") %>
     <div class="container">
       <%= text_field_tag(:street) %>
     </div>
   </div>
   <div class="form-group">
-    <%= label_tag(:q, "City:") %>
+    <%= label_tag(:city, "City:") %>
     <div class="container">
-      <%= text_field_tag(:q) %>
+      <%= text_field_tag(:city) %>
     </div>
   </div>
   <div class="form-group">
-    <%= label_tag(:q, "Postal Code:") %>
+    <%= label_tag(:pc, "Postal Code:") %>
     <div class="container">
-      <%= text_field_tag(:q) %>
+      <%= text_field_tag(:pc) %>
     </div>
   </div>
   <div class="form-group">
     <%= label_tag(:q, "Province:") %>
     <div class="container">
       <%= select_tag "province_id", options_from_collection_for_select(Province.all, "id", "province_code") %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag(:fname, "Credit Card:") %>
+    <div class="container">
+      <%= text_field_tag(:cc) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= label_tag(:fname, "3-Digit Security Code:") %>
+    <div class="container">
+      <%= text_field_tag(:security_code) %>
     </div>
   </div>
 
