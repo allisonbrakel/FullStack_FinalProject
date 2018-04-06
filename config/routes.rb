@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'products/:id', to: 'products#show'
 
   post 'products/:id/add_to_cart', to: 'products#add_to_cart'
+  get 'cart', to: 'products/cart'
 
 
   root to: 'products#index'
