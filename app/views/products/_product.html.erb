@@ -17,9 +17,15 @@
       <%= link_to 'View Details', products_path + "/#{product.id}" %>
     </p>
   <% end %>
-  <p>
-    <%= link_to 'Add to Cart', products_path + "/#{product.id}/add_to_cart", method: :post %>
-  </p>
+  <% if add_link %>
+    <p>
+      <%= link_to 'Add to Cart', products_path + "/#{product.id}/add_to_cart", method: :post %>
+    </p>
+    <% else %>
+    <p>
+      <%= link_to 'Remove', products_path + "/#{product.id}/remove_from_cart", method: :post %>
+    </p>
+  <% end %>
 </div>
 
 

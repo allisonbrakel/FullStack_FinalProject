@@ -1,4 +1,8 @@
-<%= render partial: 'product',
-           collection: @products_in_cart,
-           locals: {show_details_link:true}
-%>
+<div class="container text-center">
+  <h3>Your Cart</h3><br>
+  <%= render partial: 'product',
+             collection: @products_in_cart,
+             locals: {show_details_link:true,
+                      add_link:false}
+  %>
+</div>

@@ -2,7 +2,8 @@
   <h3>The Album Shop</h3><br>
   <%= render partial: 'product',
                      collection: @products,
-                     locals: {show_details_link:true}
+                     locals: {show_details_link:true,
+                              add_link:true}
   %>
   <%= paginate @products %>
 </div>
