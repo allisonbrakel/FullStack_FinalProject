@@ -1,0 +1,31 @@
+<h3>Customer Details:</h3>
+
+<h3>Address Details:</h3>
+<%= form_tag('/cart/checkout/order', method: "get") do %>
+  <div class="form-group">
+    <%= label_tag(:street, "Street:") %>
+    <div class="container">
+      <%= text_field_tag(:street) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= label_tag(:q, "City:") %>
+    <div class="container">
+      <%= text_field_tag(:q) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= label_tag(:q, "Postal Code:") %>
+    <div class="container">
+      <%= text_field_tag(:q) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= label_tag(:q, "Province:") %>
+    <div class="container">
+      <%= select_tag "province_id", options_from_collection_for_select(Province.all, "id", "province_code") %>
+    </div>
+  </div>
+
+  <%= submit_tag("Next Step..") %>
+<% end %>

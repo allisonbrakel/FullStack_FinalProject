@@ -10,6 +10,16 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def order
+    @street = params[:street]
+    @province = if params[:province_id].blank?
+                  Province.find(1)
+                else
+                  Province.find(params[:province_id])
+                end
+
+  end
+
   def add_to_cart
     id = params[:id].to_i
     session[:cart] << id
@@ -19,7 +29,7 @@ class ProductsController < ApplicationController
   def remove_from_cart
     id = params[:id].to_i
     session[:cart].delete(id)
-    redirect_to products_path+"/cart"
+    redirect_to '/cart'
   end
 
   private

@@ -1,0 +1,12 @@
+<%= form_tag(search_path, method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<%= form_tag(search_path, method: "get") do %>
+  <%= label_tag(:q, "Search by:") %>
+  <%= select_tag "category_id", options_from_collection_for_select(Category.all, "id", "name") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>

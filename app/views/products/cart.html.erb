@@ -1,5 +1,6 @@
 <div class="container text-center">
   <h3>Your Cart</h3><br>
+  <h4><%= link_to 'Checkout', "/cart/checkout"%></h4>
   <%= render partial: 'product',
              collection: @products_in_cart,
              locals: {show_details_link:true,

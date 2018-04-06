@@ -13,6 +13,11 @@ Rails.application.routes.draw do
   post 'products/:id/add_to_cart', to: 'products#add_to_cart'
   post 'products/:id/remove_from_cart', to: 'products#remove_from_cart'
   get 'cart', to: 'products#cart'
+  get 'cart/checkout', to: 'products#checkout'
+
+  get '/startsearch', to: 'search#search_page'
+
+  get '/cart/checkout/order', to: 'products#order'
 
 
   root to: 'products#index'
